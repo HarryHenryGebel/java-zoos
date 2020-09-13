@@ -1,4 +1,4 @@
-package tech.gebel.javaZoos;
+package tech.gebel.javazoos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
