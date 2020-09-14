@@ -20,7 +20,18 @@ public class Zoo {
   @JsonIgnoreProperties(value = "zoo", allowSetters = true)
   private Set<Telephone> telephones = new HashSet<>();
 
+  @ManyToMany(mappedBy = "zoos")
+  private Set<Animal> animals = new HashSet<>();
+
   public Zoo() {}
+
+  public Set<Animal> getAnimals() {
+    return animals;
+  }
+
+  public void setAnimals(Set<Animal> animals) {
+    this.animals = animals;
+  }
 
   public Set<Telephone> getTelephones() {
     return telephones;
