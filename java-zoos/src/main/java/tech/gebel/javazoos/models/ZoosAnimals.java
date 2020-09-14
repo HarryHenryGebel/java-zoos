@@ -2,9 +2,7 @@ package tech.gebel.javazoos.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 import javax.persistence.*;
 
 @Entity
@@ -52,10 +50,15 @@ public class ZoosAnimals extends Auditable implements Serializable {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ZoosAnimals that = (ZoosAnimals) o;
+  public boolean equals(Object object) {
+    if (this == object) return true;
+    if (object == null || getClass() != object.getClass()) return false;
+
+    ZoosAnimals that = (ZoosAnimals) object;
+    if (
+      zoo == null || that.zoo == null || animal == null || that.animal == null
+    ) return false;
+
     return (
       zoo.getZooId() == that.zoo.getZooId() &&
       animal.getAnimalId() == that.animal.getAnimalId()
