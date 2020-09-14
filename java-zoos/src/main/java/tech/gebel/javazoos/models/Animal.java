@@ -1,8 +1,8 @@
 package tech.gebel.javazoos.models;
 
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "animals")
@@ -18,11 +18,11 @@ public class Animal extends Auditable {
   @JoinTable(
     name = "zoo_animals",
     joinColumns = @JoinColumn(name = "animal_id"),
-    inverseJoinColumns = @JoinColumn(name = "zoo_id"))
+    inverseJoinColumns = @JoinColumn(name = "zoo_id")
+  )
   private Set<Zoo> zoos = new HashSet<>();
 
-  public Animal() {
-  }
+  public Animal() {}
 
   public Set<Zoo> getZoos() {
     return zoos;
