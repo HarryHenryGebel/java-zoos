@@ -1,5 +1,6 @@
 package tech.gebel.javazoos.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @Entity
@@ -18,6 +19,7 @@ public class Telephone extends Auditable {
 
   @ManyToOne
   @JoinColumn(name = "zoo_id")
+  @JsonIgnoreProperties(value = "phones")
   private Zoo zoo;
 
   public Telephone() {}

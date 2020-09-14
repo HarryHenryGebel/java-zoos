@@ -11,13 +11,13 @@ public class ZoosAnimals extends Auditable implements Serializable {
   @Id
   @ManyToOne
   @JoinColumn(name = "zoo_id", nullable = false)
-  @JsonIgnoreProperties(value = "animal_names", allowSetters = true)
+  @JsonIgnoreProperties(value = "animals", allowSetters = true)
   private Zoo zoo;
 
   @Id
   @ManyToOne
   @JoinColumn(name = "animal_id", nullable = false)
-  @JsonIgnoreProperties(value = "zoo_names", allowSetters = true)
+  @JsonIgnoreProperties(value = "zoos", allowSetters = true)
   private Animal animal;
 
   @Column(nullable = false)
