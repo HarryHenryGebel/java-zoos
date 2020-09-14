@@ -25,7 +25,7 @@ public class ZooController {
     return new ResponseEntity<>(zoos, HttpStatus.OK);
   }
 
-  @GetMapping("/zoos/zoo/{id}")
+  @GetMapping("/zoo/{id}")
   private ResponseEntity<?> getZooById(@PathVariable long id) {
     Zoo zoo = zooService.findZooById(id);
     return new ResponseEntity<>(zoo, HttpStatus.OK);
