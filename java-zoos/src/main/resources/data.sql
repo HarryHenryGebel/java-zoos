@@ -1,6 +1,5 @@
-
 DELETE
-FROM zoo_animals;
+FROM zoos_animals;
 
 DELETE
 FROM animals;
@@ -34,7 +33,7 @@ INSERT INTO animals (animal_id, animal_type, created_by, created_date, last_modi
                 (6, 'llama',  'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
                 (7, 'turtle', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP);
 
-INSERT INTO zoo_animals (zoo_id, animal_id, incoming_zoo, created_by, created_date, last_modified_by, last_modified_date)
+INSERT INTO zoos_animals (zoo_id, animal_id, incoming_zoo, created_by, created_date, last_modified_by, last_modified_date)
          VALUES (1, 1, 'Point Defiance Zoo', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
                 (2, 2, 'Gladys Porter Zoo', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
                 (1, 2, 'Point Defiance Zoo', 'SYSTEM', CURRENT_TIMESTAMP, 'SYSTEM', CURRENT_TIMESTAMP),
