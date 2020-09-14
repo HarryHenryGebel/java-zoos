@@ -1,5 +1,6 @@
 package tech.gebel.javazoos.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
@@ -14,23 +15,14 @@ public class Animal extends Auditable {
   @Column(name = "animal_type")
   private String animalType;
 
-  @ManyToMany
-  @JoinTable(
-    name = "zoo_animals",
-    joinColumns = @JoinColumn(name = "animal_id"),
-    inverseJoinColumns = @JoinColumn(name = "zoo_id")
-  )
-  private Set<Zoo> zoos = new HashSet<>();
+  /**
+   * Animal's half of the ZoosAnimals join
+   */
+  @OneToMany(mappedBy = "animal", cascade = CascadeType.ALL)
+  @JsonIgnoreProperties(value = "animal", allowSetters = true)
+  private Set<ZoosAnimals> zoosAnimals = new HashSet<>();
 
   public Animal() {}
-
-  public Set<Zoo> getZoos() {
-    return zoos;
-  }
-
-  public void setZoos(Set<Zoo> zoos) {
-    this.zoos = zoos;
-  }
 
   public long getAnimalId() {
     return animalId;

@@ -20,17 +20,21 @@ public class Zoo extends Auditable {
   @JsonIgnoreProperties(value = "zoo", allowSetters = true)
   private Set<Telephone> telephones = new HashSet<>();
 
-  @ManyToMany(mappedBy = "zoos")
-  private Set<Animal> animals = new HashSet<>();
+  /**
+   * Zoo's half of the ZoosAnimals join
+   */
+  @OneToMany(mappedBy = "zoo", cascade = CascadeType.ALL)
+  @JsonIgnoreProperties(value = "zoo", allowSetters = true)
+  private Set<ZoosAnimals> zoosAnimals = new HashSet<>();
 
   public Zoo() {}
 
-  public Set<Animal> getAnimals() {
-    return animals;
+  public Set<ZoosAnimals> getZoosAnimals() {
+    return zoosAnimals;
   }
 
-  public void setAnimals(Set<Animal> animals) {
-    this.animals = animals;
+  public void setZoosAnimals(Set<ZoosAnimals> zoosAnimals) {
+    this.zoosAnimals = zoosAnimals;
   }
 
   public Set<Telephone> getTelephones() {
