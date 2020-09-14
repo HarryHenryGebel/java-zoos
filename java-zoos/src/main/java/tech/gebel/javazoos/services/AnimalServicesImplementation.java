@@ -14,7 +14,7 @@ public class AnimalServicesImplementation implements AnimalServices {
   }
 
   @Override
-  public List<AnimalZooCount> getAnimalZooCounts() {
+  public List<AnimalZooCount> getAnimalZooCount() {
     return animalRepository.getAnimalZooCount();
   }
 }

@@ -20,7 +20,7 @@ public class AnimalController {
 
   @GetMapping(value = "/count")
   private ResponseEntity<?> getAnimalCount() {
-    List<AnimalZooCount> animalZooCounts = animalServices.getAnimalZooCounts();
+    List<AnimalZooCount> animalZooCounts = animalServices.getAnimalZooCount();
     return new ResponseEntity<>(animalZooCounts, HttpStatus.OK);
   }
 }

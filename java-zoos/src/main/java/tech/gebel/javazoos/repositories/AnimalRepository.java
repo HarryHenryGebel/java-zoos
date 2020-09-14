@@ -11,9 +11,9 @@ import tech.gebel.javazoos.views.AnimalZooCount;
 public interface AnimalRepository extends CrudRepository<Animal, Long> {
   @Query(
     value = "SELECT " +
-    "animals.animal_type animal_type, " +
-    "animals.animal_id, " +
-    "count(zoos_animals.zoo_id) zoo_count " +
+    "animals.animal_type animalType, " +
+    "animals.animal_id animalId, " +
+    "count(zoos_animals.zoo_id) zooCount " +
     "FROM animals " +
     "JOIN zoos_animals " +
     "ON zoos_animals.animal_id = animals.animal_id " +
