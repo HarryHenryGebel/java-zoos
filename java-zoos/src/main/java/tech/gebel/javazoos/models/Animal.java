@@ -20,16 +20,16 @@ public class Animal extends Auditable {
    */
   @OneToMany(mappedBy = "animal", cascade = CascadeType.ALL)
   @JsonIgnoreProperties(value = "animal", allowSetters = true)
-  private Set<ZoosAnimals> zoosAnimals = new HashSet<>();
+  private Set<ZoosAnimals> zoos = new HashSet<>();
 
   public Animal() {}
 
-  public Set<ZoosAnimals> getZoosAnimals() {
-    return zoosAnimals;
+  public Set<ZoosAnimals> getZoos() {
+    return zoos;
   }
 
-  public void setZoosAnimals(Set<ZoosAnimals> zoosAnimals) {
-    this.zoosAnimals = zoosAnimals;
+  public void setZoos(Set<ZoosAnimals> zoos) {
+    this.zoos = zoos;
   }
 
   public long getAnimalId() {
