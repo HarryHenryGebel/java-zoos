@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "telephones")
-public class Telephone {
+public class Telephone extends Auditable {
   @Id
   @GeneratedValue
   @Column(name = "phone_id")

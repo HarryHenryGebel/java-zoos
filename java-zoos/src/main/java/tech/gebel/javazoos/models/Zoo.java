@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "zoos")
-public class Zoo {
+public class Zoo extends Auditable {
   @Id
   @Column(name = "zoo_id")
   @GeneratedValue
