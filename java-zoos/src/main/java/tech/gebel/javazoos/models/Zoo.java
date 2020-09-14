@@ -1,5 +1,8 @@
 package tech.gebel.javazoos.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 
 @Entity
@@ -11,9 +14,20 @@ public class Zoo {
   private long zooId;
 
   @Column(name = "zoo_name")
-  private String zooName;
+  private String zooName = "";
 
-  public Zoo() {
+  @OneToMany(mappedBy = "zoo", cascade = CascadeType.ALL, orphanRemoval = true)
+  @JsonIgnoreProperties(value = "zoo", allowSetters = true)
+  private Set<Telephone> telephones = new HashSet<>();
+
+  public Zoo() {}
+
+  public Set<Telephone> getTelephones() {
+    return telephones;
+  }
+
+  public void setTelephones(Set<Telephone> telephones) {
+    this.telephones = telephones;
   }
 
   public Zoo(long zooId, String zooName) {
