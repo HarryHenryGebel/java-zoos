@@ -15,7 +15,10 @@ public class Animal extends Auditable {
   private String animalType;
 
   @ManyToMany
-  @JoinTable(name = "zoo_animals")
+  @JoinTable(
+    name = "zoo_animals",
+    joinColumns = @JoinColumn(name = "animal_id"),
+    inverseJoinColumns = @JoinColumn(name = "zoo_id"))
   private Set<Zoo> zoos = new HashSet<>();
 
   public Animal() {
