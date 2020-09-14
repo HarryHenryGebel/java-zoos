@@ -64,6 +64,6 @@ public class ZoosAnimals extends Auditable implements Serializable {
 
   @Override
   public int hashCode() {
-    return 1430;
+    return Objects.hash(zoo.getZooId(), animal.getAnimalId(), incomingZoo);
   }
 }
