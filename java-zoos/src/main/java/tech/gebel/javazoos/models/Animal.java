@@ -24,6 +24,14 @@ public class Animal extends Auditable {
 
   public Animal() {}
 
+  public Set<ZoosAnimals> getZoosAnimals() {
+    return zoosAnimals;
+  }
+
+  public void setZoosAnimals(Set<ZoosAnimals> zoosAnimals) {
+    this.zoosAnimals = zoosAnimals;
+  }
+
   public long getAnimalId() {
     return animalId;
   }
